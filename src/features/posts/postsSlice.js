@@ -9,6 +9,7 @@ const initialState = [
         title: 'Learning Redux Toolkit',
         content: 'I have heard good things.',
         date: sub(new Date(), {minutes: 10}).toISOString(),
+        
     },
 
     {
@@ -16,6 +17,7 @@ const initialState = [
         title: 'Slices',
         content: 'The more i say slice, the more i want pizza.',
         date: sub(new Date(), {minutes: 5}).toISOString(),
+        
     },
 ]
 
@@ -35,15 +37,15 @@ const postsSlice = createSlice({
                         title,
                         content,
                         date: new Date().toISOString(),
-                        userId
+                        userId,
                     }
                 }
-            }
+            },
         }
     }
 })
 
 
 export const selectAllPosts = (state) => state.posts;
-export const { postAdded } = postsSlice.actions; 
+export const { postAdded} = postsSlice.actions; 
 export default postsSlice.reducer;
